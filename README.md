@@ -1,2 +1,2 @@
 # chat_swoole
-使用swoole的web_socket集成larval框架开发的一款聊天
+使用swoole的web_socket集成laraval框架开发的一款聊天
