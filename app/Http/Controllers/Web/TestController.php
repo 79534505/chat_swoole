@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\Providers\Helper\Helper;
 
 class TestController extends Controller
 {
     public function test()
     {
-        echo '111';
+        dd(Helper::authcode('test', 'ENCODE', 'test_'));
     }
 }
