@@ -1556,17 +1556,17 @@ class Helper
      *
      * @param string $string 待加密字符串
      * @param string $operation
-     * $param string $key 密匙
+     * @param string $key 密匙
      * @param integer $expiry 密文有效期
      * @return string
      */
     public static function authcode($string, $operation = 'DECODE', $key = '', $expiry = 0)
     {
         // 动态密匙长度，相同的明文会生成不同密文就是依靠动态密匙
-        $ckey_length = 4;
+        $ckey_length = 0;
 
         // 密匙
-        $key = md5($key ? $key : $GLOBALS['discuz_auth_key']);
+        $key = md5($key ? $key : env('DEFAULT_AUTH_KEY'));
 
         // 密匙a会参与加解密
         $keya = md5(substr($key, 0, 16));
